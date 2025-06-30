@@ -6,7 +6,7 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:jo7422463158@A@localhost:5432/todoflaskdb'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:meuflaskapp123@localhost:5432/todoflaskdb'
     db.init_app(app)
     
     from .routes import main
