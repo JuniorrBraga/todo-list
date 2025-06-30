@@ -1,7 +1,6 @@
 :root{
     --header-color: #2391db;
     --body-color: white;
-    --text-header-footer-color:white;
     --footer-color: #2391db;
 }
 
@@ -35,11 +34,25 @@ body {
 }
 
 .todo-header{
-    background-color: var(--header-color);
-    color: var(--text-header-footer-color);
+    text-align: center;
+    background-color: var(--header-color); 
+    color: white;
+    padding: 15px;
+    border-radius: 4px 4px 0 0;
+    margin: -24px -24px 20px -24px;
 }
 
-.todo-footer{
-    background-color: var(--header-color);
-    color: var(--text-header-footer-color);
+.todo-footer {
+    margin-top: 24px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 16px;
+    color: #999; 
+    font-size: 14px;
+    text-align: center;
+}
+
+.task-list{
+    list-style: none;
+    padding: 0;
+    font-size: 20px;
 }

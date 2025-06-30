@@ -15,25 +15,16 @@
         </header>
 
         <ul class="task-list">
-            <li class="task-item">
-                <input type="checkbox" id="task1">
-                <label for="task1">Entregar o relatório do projeto</label>
-            </li>
+
+            {% for task in tasks %}
 
             <li class="task-item">
-                <input type="checkbox" id="task2">
-                <label for="task2">Reunião de equipe às 10h</label>
+                <input type="checkbox" id="task{{ task.id }}">
+                <label for="task{{ task.id }}">{{ task.content }}</label>
             </li>
 
-            <li class="task-item">
-                <input type="checkbox" id="task3">
-                <label for="task3">Comprar café</label>
-            </li>
+            {% endfor %}
 
-            <li class="task-item">
-                <input type="checkbox" id="task4">
-                <label for="task4">Responder e-mails importantes</label>
-            </li>
         </ul>
 
         <footer class="todo-footer">
