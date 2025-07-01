@@ -24,10 +24,15 @@
             {% for task in tasks %}
 
             <li class="task-item">
-                <input type="checkbox" id="task{{ task.id }}">
-                <label for="task{{ task.id }}">{{ task.content }}</label>
-                <a href="{{ url_for('main.update', task_id=task.id) }}">Concluir</a>
-                <a href="{{ url_for('main.delete', task_id=task.id)}}">Deletar</a>
+                <div class="left-side">
+                    <form action="{{url_for('main.update', task_id=task.id)}}" method="post">
+                        <input type="checkbox" id="task{{ task.id }}" onchange="this.form.submit()" {% if task.completed %} checked {% endif %}>
+                        <label for="task{{ task.id }}">{{ task.content }}</label>
+                    </form>
+                </div>
+                <div class="right-side">
+                    <a href="{{ url_for('main.delete', task_id=task.id)}}" class="delete">Deletar</a>
+                </div>
             </li>
 
             {% endfor %}
