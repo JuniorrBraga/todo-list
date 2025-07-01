@@ -1,7 +1,8 @@
-:root{
+:root {
     --header-color: #2391db;
     --body-color: white;
     --footer-color: #2391db;
+    --button-color: #2391db;
 }
 
 * {
@@ -23,19 +24,19 @@ body {
 .todo-container {
     display: block;
     width: 90%;
-    max-width: 700px; 
+    max-width: 700px;
     margin: 40px auto;
 
-    background-color: #f4f7f9; 
+    background-color: #f4f7f9;
     border: 1px solid #ddd;
-    border-radius: 8px; 
-    padding: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.todo-header{
+.todo-header {
     text-align: center;
-    background-color: var(--header-color); 
+    background-color: var(--header-color);
     color: white;
     padding: 15px;
     border-radius: 4px 4px 0 0;
@@ -46,12 +47,41 @@ body {
     margin-top: 24px;
     border-top: 1px solid #e0e0e0;
     padding-top: 16px;
-    color: #999; 
+    color: #999;
     font-size: 14px;
     text-align: center;
 }
 
-.task-list{
+.input-task {
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-task:focus {
+    border-color: #4a90e2;
+}
+
+.send {
+    padding: 10px 20px;
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.send:hover {
+    background-color: #357ab8;
+}
+
+.task-list {
     list-style: none;
     padding: 0;
     font-size: 20px;
