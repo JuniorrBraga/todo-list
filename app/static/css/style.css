@@ -3,6 +3,8 @@
     --body-color: white;
     --footer-color: #2391db;
     --button-color: #2391db;
+    --complete-button-color: rgb(20, 175, 20);
+    --delete-button-color: rgb(252, 64, 64);
 }
 
 * {
@@ -85,4 +87,56 @@ body {
     list-style: none;
     padding: 0;
     font-size: 20px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.task-item .left-side {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-item .right-side {
+    margin-left: auto; /* empurra para a direita */
+    display: flex;
+    gap: 10px;
+}
+
+.complete {
+    padding: 10px;
+    background-color: var(--complete-button-color);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+.complete:hover {
+    background-color: green;
+}
+
+.delete {
+    padding: 10px 20px;
+    background-color: var(--delete-button-color);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+.delete:hover {
+    background-color: rgb(122, 6, 6);
 }

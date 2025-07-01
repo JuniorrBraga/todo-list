@@ -6,7 +6,7 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def home():
-    lista_de_tarefas = Task.query.all()
+    lista_de_tarefas = Task.query.order_by(Task.date_created).all()
     return render_template('home.html', tasks=lista_de_tarefas)
 
 @main.route('/add', methods=['POST'])
@@ -17,10 +17,10 @@ def add_task():
     db.session.commit()
     return redirect(url_for('main.home'))
 
-@main.route('/update/<int:task_id>')
+@main.route('/update/<int:task_id>', methods=['POST'])
 def update(task_id):
     task_att = Task.query.get_or_404(task_id)
-    task_att.completed = True
+    task_att.completed = not task_att.completed
     db.session.commit()
     return redirect(url_for('main.home'))
 
