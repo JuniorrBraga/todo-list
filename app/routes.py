@@ -16,4 +16,17 @@ def add_task():
     db.session.add(nova_tarefa)
     db.session.commit()
     return redirect(url_for('main.home'))
-    
+
+@main.route('/update/<int:task_id>')
+def update(task_id):
+    task_att = Task.query.get_or_404(task_id)
+    task_att.completed = True
+    db.session.commit()
+    return redirect(url_for('main.home'))
+
+@main.route('/delete/<int:task_id>')
+def delete(task_id):
+    task_delete = Task.query.get_or_404(task_id)
+    db.session.delete(task_delete)
+    db.session.commit()
+    return redirect(url_for('main.home'))

@@ -15,8 +15,8 @@
         </header>
 
         <form action="/add" method="post">
-            <input type="text" name="content">
-            <button type="submit">Enviar</button>
+            <input type="text" name="content" class="input-task" placeholder="Insira sua tarefa aqui...">
+            <button type="submit" class="send">Enviar</button>
         </form>
 
         <ul class="task-list">
@@ -26,6 +26,8 @@
             <li class="task-item">
                 <input type="checkbox" id="task{{ task.id }}">
                 <label for="task{{ task.id }}">{{ task.content }}</label>
+                <a href="{{ url_for('main.update', task_id=task.id) }}">Concluir</a>
+                <a href="{{ url_for('main.delete', task_id=task.id)}}">Deletar</a>
             </li>
 
             {% endfor %}
